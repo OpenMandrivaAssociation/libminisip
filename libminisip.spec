@@ -2,7 +2,7 @@
 %define oname	minisip
 %define version 0.3.1
 %define cvs	20061210
-%define release %mkrel 0.%cvs.2
+%define release %mkrel 0.%cvs.3
 
 %define major	0
 %define libname %mklibname %oname %major
