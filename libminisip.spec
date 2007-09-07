@@ -21,6 +21,7 @@ BuildRequires:	libmstun-devel >= 0.5.0-0.20061210.0
 BuildRequires:	libmnetutil-devel >= 0.3.1-0.20061210.0
 BuildRequires:	libmikey-devel >= 0.4.1-0.20061210.0
 BuildRequires:	libmsip-devel >= 0.3.1-0.20061210.0
+BuildRequires:	ffmpeg-devel
 BuildRequires:	SDL-devel
 BuildRequires:	alsa-lib-devel
 BuildRequires:	libGConf2-devel
