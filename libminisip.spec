@@ -15,8 +15,8 @@ License:	GPL
 Group:		System/Libraries
 URL:		http://www.minisip.org/
 Source:		http://www.minisip.org/source/%{name}-%{svn}.tar.bz2
-Patch0:		libminisip-libgsm.diff
-Patch1:		libminisip-ffmpeg.diff
+#Patch0:		libminisip-libgsm.diff
+#Patch1:		libminisip-ffmpeg.diff
 BuildRequires:	libmstun-devel >= 0.5.0-0.20061210.0
 BuildRequires:	libmnetutil-devel >= 0.3.1-0.20061210.0
 BuildRequires:	libmikey-devel >= 0.4.1-0.20061210.0
@@ -64,8 +64,8 @@ Libraries and includes files for developing programs based on %{name}.
 %prep
 
 %setup -q -n %{name}
-%patch0 -p1
-%patch1 -p0
+#%patch0 -p1
+#%patch1 -p0
 
 %build
 ./bootstrap
