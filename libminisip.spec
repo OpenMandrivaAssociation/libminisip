@@ -77,7 +77,7 @@ Libraries and includes files for developing programs based on %{name}.
     --enable-sdl \
     --enable-video \
     --enable-zrtp \
-
+    --with-avcodec=%{_includedir}/ffmpeg
 #    --enable-aec \
 #    --enable-p2t \
 
