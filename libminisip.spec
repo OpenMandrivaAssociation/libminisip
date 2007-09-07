@@ -1,8 +1,8 @@
 %define name	libminisip
 %define oname	minisip
 %define version 0.3.1
-%define cvs	20061210
-%define release %mkrel 0.%cvs.3
+%define svn	3418
+%define release %mkrel %svn.1
 
 %define major	0
 %define libname %mklibname %oname %major
@@ -14,7 +14,7 @@ Release: 	%{release}
 License:	GPL
 Group:		System/Libraries
 URL:		http://www.minisip.org/
-Source:		http://www.minisip.org/source/%{name}-%{version}-%{cvs}.tar.bz2
+Source:		http://www.minisip.org/source/%{name}-%{svn}.tar.bz2
 Patch0:		libminisip-libgsm.diff
 Patch1:		libminisip-ffmpeg.diff
 BuildRequires:	libmstun-devel >= 0.5.0-0.20061210.0
