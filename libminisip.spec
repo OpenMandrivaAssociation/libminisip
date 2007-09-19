@@ -1,7 +1,7 @@
 %define name	libminisip
 %define oname	minisip
 %define version 0.3.1
-%define svn	3418
+%define svn	3429
 %define release %mkrel %svn.1
 
 %define major	0
