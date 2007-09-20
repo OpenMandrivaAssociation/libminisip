@@ -80,7 +80,7 @@ Libraries and includes files for developing programs based on %{name}.
     --with-avcodec=%{_includedir}/ffmpeg
 #    --enable-aec \
 #    --enable-p2t \
-
+perl -pi -e 's|-lnsl|-lnsl -lpthread||g' Makefile
 %make
 										
 %install
