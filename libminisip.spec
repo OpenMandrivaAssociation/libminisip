@@ -2,7 +2,7 @@
 %define oname	minisip
 %define version 0.3.1
 %define svn	3429
-%define release %mkrel %svn.1
+%define release %mkrel %svn.2
 
 %define major	0
 %define libname %mklibname %oname %major
