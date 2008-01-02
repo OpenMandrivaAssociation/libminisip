@@ -33,6 +33,7 @@ BuildRequires:	libsamplerate-devel
 BuildRequires:	libspeex-devel
 BuildRequires:	libzrtpcpp-devel
 BuildRequires:	zlib-devel
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 MiniSip library from MiniSip
