@@ -1,11 +1,12 @@
 %define name	libminisip
 %define oname	minisip
 %define version 0.3.1
-%define svn	3429
-%define release %mkrel %svn.2
+%define svn	3565
+%define release %mkrel %svn.1
 
 %define major	0
-%define libname %mklibname %oname %major
+%define libname %mklibname %{oname} %major
+%define develname %mklibname %{oname} -d
 
 Summary: 	MiniSip library from MiniSip
 Name: 	 	%{name}
@@ -15,12 +16,10 @@ License:	GPL
 Group:		System/Libraries
 URL:		http://www.minisip.org/
 Source:		http://www.minisip.org/source/%{name}-%{svn}.tar.bz2
-#Patch0:		libminisip-libgsm.diff
-#Patch1:		libminisip-ffmpeg.diff
-BuildRequires:	libmstun-devel >= 0.5.0-0.20061210.0
-BuildRequires:	libmnetutil-devel >= 0.3.1-0.20061210.0
-BuildRequires:	libmikey-devel >= 0.4.1-0.20061210.0
-BuildRequires:	libmsip-devel >= 0.3.1-0.20061210.0
+BuildRequires:	libmstun-devel >= 0.5.0-3565.0
+BuildRequires:	libmnetutil-devel >= 0.3.1-3565.0
+BuildRequires:	libmikey-devel >= 0.4.1-3565.0
+BuildRequires:	libmsip-devel >= 0.3.1-3565.0
 BuildRequires:	ffmpeg-devel
 BuildRequires:	SDL-devel
 BuildRequires:	alsa-lib-devel
@@ -49,24 +48,23 @@ Plugins from libminisip
 Summary:        Dynamic libraries from %{name}
 Group:          System/Libraries
 Requires:	%{name}-plugins
+Provides:       %{name} = %{version}-%{release}
 
 %description -n %{libname}
 Dynamic libraries from %{name}.
 
-%package -n 	%{libname}-devel
+%package -n 	%{develname}
 Summary: 	Header files and static libraries from %{name}
 Group: 		Development/C
 Requires: 	%{libname} >= %{version}
 Provides:	%{name}-devel = %{version}-%{release} 
 
-%description -n %{libname}-devel
+%description -n %{develname}
 Libraries and includes files for developing programs based on %{name}.
 
 %prep
 
 %setup -q -n %{name}
-#%patch0 -p1
-#%patch1 -p0
 
 %build
 ./bootstrap
@@ -78,9 +76,9 @@ Libraries and includes files for developing programs based on %{name}.
     --enable-video \
     --enable-zrtp \
     --with-avcodec=%{_includedir}/ffmpeg
-#    --enable-aec \
-#    --enable-p2t \
+
 perl -pi -e 's|-lnsl|-lnsl -lpthread||g' Makefile
+
 %make
 										
 %install
@@ -97,7 +95,8 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}
+%{_libdir}/*.so.%{major}.*
 
 %files plugins
 %defattr(-,root,root)
@@ -105,7 +104,7 @@ rm -rf %{buildroot}
 %dir %{_libdir}/%{name}/plugins
 %{_libdir}/%{name}/plugins/*.so
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README 
 %{_includedir}/*
