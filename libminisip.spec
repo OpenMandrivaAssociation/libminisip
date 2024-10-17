@@ -14,7 +14,7 @@ Version: 	%{version}
 Release: 	%{release}
 License:	GPL
 Group:		System/Libraries
-URL:		http://www.minisip.org/
+URL:		https://www.minisip.org/
 Source:		http://www.minisip.org/source/%{name}-%{svn}.tar.bz2
 BuildRequires:	libmstun-devel >= 0.5.0-3565.0
 BuildRequires:	libmnetutil-devel >= 0.3.1-3565.0
