@@ -16,6 +16,11 @@ License:	GPL
 Group:		System/Libraries
 URL:		https://www.minisip.org/
 Source:		http://www.minisip.org/source/%{name}-%{svn}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libmstun-devel >= 0.5.0-3565.0
 BuildRequires:	libmnetutil-devel >= 0.3.1-3565.0
 BuildRequires:	libmikey-devel >= 0.4.1-3565.0
